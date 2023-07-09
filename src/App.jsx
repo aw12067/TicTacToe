@@ -24,6 +24,7 @@ function App() {
           const lastGamingState = isTraversing? currentHistory[currentMove]: currentHistory[currentHistory.length-1];
             const nextSqaureState =  lastGamingState.squares.map((squareValue,position) => {
                 if(clickedPosition==position){
+                    //return lastGamingState.isXNext ? <span className='text-green'>X</span>:<span className='text-orange'>O</span>;
                     return lastGamingState.isXNext ? 'X':'O';
                 }
 
@@ -47,7 +48,10 @@ function App() {
     }
 
   return (
-    <div className='app'>
+    <div className='app'>  
+    <h1>
+      <span className='text-green'>TIC</span> <span className='text-orange'>TAC</span> <span className='text-green'>TOE</span>
+    </h1>
       <StatusMessage winner={winner} gamingBoard={gamingBoard} />
       <Board squares={gamingBoard.squares} handleSquareClick={handleSquareClick}/>
       <button type='button' onClick={onNewGameStart} className={

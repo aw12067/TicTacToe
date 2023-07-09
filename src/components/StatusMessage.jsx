@@ -8,9 +8,9 @@ const StatusMessage = ({winner, gamingBoard}) => {
     
     const renderStatusMessage = () => {
         if(winner){
-            return <div>Winner is{' '}
+            return <div>Winner is {' '}
                     <span className={winner ===' X'?'text-green':'text-orange'}>
-                        {winner}
+                        { winner}
                     </span>
                 </div>
         }
