@@ -21,10 +21,11 @@ function App() {
       }
         setHistory(currentHistory =>{
           const isTraversing = currentMove+1 !== currentHistory.length;
+
           const lastGamingState = isTraversing? currentHistory[currentMove]: currentHistory[currentHistory.length-1];
+
             const nextSqaureState =  lastGamingState.squares.map((squareValue,position) => {
                 if(clickedPosition==position){
-                    //return lastGamingState.isXNext ? <span className='text-green'>X</span>:<span className='text-orange'>O</span>;
                     return lastGamingState.isXNext ? 'X':'O';
                 }
 
